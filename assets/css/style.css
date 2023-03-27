@@ -17,3 +17,6 @@
 table.highlight > tbody > tr:hover {
     background-color: #bdbdbd;
   }
+.container{
+    width: 100% !important;
+}
