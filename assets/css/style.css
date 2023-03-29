@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "BYekan";
+    src: url("../fonts/BYekan/BYekan-webfont.ttf") format("truetype");
+        
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    direction: rtl;
+    font-family: "BYekan";
+}
 @media(min-width:600px){
     .top_navbar{
         box-shadow: 0 0 50px gray !important;
@@ -28,19 +40,22 @@ table.highlight > tbody > tr:hover {
     background-color: rgba(0, 0, 0, 0.5);
     top:  0;
     left: 0;
-    z-index: 99;
+    z-index: 999;
 }
 .add_user_model{
     position: fixed;
     height: 70vh;
     background-color: white;
     bottom: 0;
-    z-index: 100;
+    z-index: 1000;
     left: 0;
     right: 0;
-    bottom: -7vh;
+    bottom: -70vh;
 }
 .add_user_model.show{
     bottom: 0;
     box-shadow: 0 0 10px blue;
+}
+.side_link_icon{
+    margin: 0 0 0 25px !important;
 }
