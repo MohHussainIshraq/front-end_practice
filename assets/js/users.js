@@ -12,5 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.add_user_model_back').addEventListener('click', (e)=>{
         document.querySelector('.add_user_model').classList.remove('show')
         e.target.classList.add('dis-none')
+
     })
+
+
 });
