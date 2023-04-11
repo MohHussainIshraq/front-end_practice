@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="assets/images/favicon.ico" rel="icon">
 </head>
-<body dir="rtl">
+<body x-data="usersData">
     
   <!-- navbar section start -->
     <nav class="white z-depth-0 top_navbar">
@@ -84,7 +84,7 @@
 
   </section>
 
-  <section class="user_list_section">
+  <section class="user_list_section" x-init="getUsers()">
     <ul class="collapsible hide-on-med-and-up">
       <li class="users_list_item">
         <div class="collapsible-header">
@@ -152,50 +152,19 @@
           </tr>
         </thead>
         <tbody class="desktop_table_body">
-          <tr>
-            <td>1</td>
-            <td>Mhi</td>
-            <td>MOH</td>
-            <td>example@test.com</td>
-            <td>new street first building</td>
-            <td>
-              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mhi</td>
-            <td>MOH</td>
-            <td>example@test.com</td>
-            <td>new street first building</td>
-            <td>
-              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mhi</td>
-            <td>MOH</td>
-            <td>example@test.com</td>
-            <td>new street first building</td>
-            <td>
-              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mhi</td>
-            <td>MOH</td>
-            <td>example@test.com</td>
-            <td>new street first building</td>
-            <td>
-              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-            </td>
-          </tr>
+          <template x-for="user in users">
+            <tr>
+              <td x-text="user.id"></td>
+              <td x-text="user.name"></td>
+              <td x-text="user.username"></td>
+              <td x-text="user.email"></td>
+              <td x-text="user.address.city+' - '+user.address.city"></td>
+              <td>
+                <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
+                <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+              </td>
+            </tr>
+          </template>
         </tbody>
       </table>
     </div>
@@ -219,11 +188,7 @@
   </section>
 
 
-  <section id="test_section" class="grey" x-data="mainData()">
-    1111
-    <span x-text="message" class="red"></span>
-    <button class="btn" x-on:click="myfunc()">click</button>
-  </section>
+  
 
   <div class="add_user_model_back dis-none"></div>
   <div class="add_user_model container rounded_top_30 trans-0-3">
@@ -255,9 +220,10 @@
   </div>
 
   <!-- content section end -->
-        
+    <script src="assets/js/axios.js"></script>
+    <!-- <script src="assets/js/axios.min.js.map" src="assets/js/axios.js"></script>     -->
     <script src="assets/materialize/js/materialize.min.js"></script>
-    <script src="assets/js/alpineJsControllers/mainController.js"></script>
+    <script src="assets/js/alpineJsControllers/usersController.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/users.js"></script>
 
