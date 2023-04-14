@@ -7,8 +7,8 @@
 }
 
 *{
-    direction: rtl;
-    font-family: "BYekan";
+    direction: ltr;
+    /* font-family: "BYekan"; */
 }
 @media(min-width:600px){
     .top_navbar{
@@ -58,4 +58,8 @@ table.highlight > tbody > tr:hover {
 }
 .side_link_icon{
     margin: 0 0 0 25px !important;
+}
+.user_list_section{
+    height: calc(100vh - 258px);
+    overflow: auto;
 }
