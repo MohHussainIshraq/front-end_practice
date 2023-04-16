@@ -184,8 +184,8 @@
 
   
 
-  <div class="add_user_model_back" x-bind:class="{'dis-none': !showAddModal}" x-on:click="showAddModal = false"></div>
-  <div class="add_user_model container rounded_top_30 trans-0-3" x-bind:class="{'show': showAddModal}">
+  <div class="add_user_model_back" x-show="showAddModal" x-transition.duration.300ms x-on:click="showAddModal = false"></div>
+  <div class="add_user_model container rounded_top_30 trans-0-3" x-bind:class="showAddModal && 'show'">
     <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
       <h5>
         <i class="material-icons m-r-10 m-l-10 pos-relative top-4">person_add</i>
