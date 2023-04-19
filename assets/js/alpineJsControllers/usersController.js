@@ -58,7 +58,16 @@ document.addEventListener('alpine:init', () => {
             }, 100)
         },
         handleSubmitAddUserForm(){
-            console.log(this.newUserInfo);
+            this.isLoading = true
+            axios.post("https://jsonplaceholder.typicode.com/users", this.newUserInfo).then((res)=>{
+                if (res.status == 201){
+                    this.mainUsers.push(res.data)
+                    this.showAddModal = false
+                    this.pagination() 
+                }
+            }).finally(()=>{
+                this.isLoading = false
+            })
         }
     }))
 })
