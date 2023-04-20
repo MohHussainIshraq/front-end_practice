@@ -85,7 +85,7 @@ document.addEventListener('alpine:init', () => {
         handleConfirmDeleteUser(userId){
             this.isLoading = true
             axios.delete("https://jsonplaceholder.typicode.com/users/"+userId).then((res)=>{
-                if (res.status === 200) {
+                if (res.status == 200) {
                     this.mainUsers = this.mainUsers.filter(user=>user.id != userId)
                     this.users = this.users.filter(user=>user.id != userId)
                     this.pagination()
